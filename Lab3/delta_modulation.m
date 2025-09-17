@@ -59,7 +59,7 @@ title('Delta Demodulated Signal (Before Filtering)');
 % Apply Low-Pass Filter
 filter_order = 20;
 normalizer_freq = fm/(fs/2); % Normalized frequency for the filter 
-lowpass_filter = fir1(filter_order, normalized_freq, 'low');
+lowpass_filter = fir1(filter_order, normalizer_freq, 'low');
 filtered_demod_signal = filter(lowpass_filter, 1, y_demod);
 
 % Plot the filtered demodulated signal

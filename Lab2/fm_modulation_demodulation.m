@@ -19,7 +19,7 @@ carrier_signal = Ac * sin(2*pi*fc.*t); % Carrier signal
 kf = 25;                  % Frequency deviation constant for FM
 
 % Perform frequency modulation (FM)
-modulated_signal = Ac * sin(2*pi*fc.*t + kf * message_signal);
+modulated_signal = Ac * sin(2*pi*fc.*t + kf * cumsum(message_signal)/fs);
 
 % Plotting
 figure;
